@@ -7,26 +7,26 @@ const app = express();
 app.get('/', (req, res) => res.send('<h1>Home</h1>'))
 
 // Get all brands
-app.get('/brand', (req, res) => {
+app.get('/mysql-store-brand', (req, res) => {
   
   const query = 'SELECT * FROM brand;';
   queryData(res, query)
 })
 
 // Get all products
-app.get('/products', (req, res) => {
+app.get('/mysql-store-products', (req, res) => {
   const query = 'SELECT * FROM product;';
   queryData(res, query)
 })
 
 // Get all users
-app.get('/users', (req, res) => {
+app.get('/mysql-store-users', (req, res) => {
   const query = 'SELECT * FROM user;';
   queryData(res, query)
 })
 
 // Get all products with his brand and who added it
-app.get('/relation', (req, res) => {
+app.get('/mysql-store-relation', (req, res) => {
   const query =
     `select product.id, product.name, brand.name, user.username created_by
   from brand, user
